@@ -1,0 +1,70 @@
+
+<html><head>
+<script language="JavaScript">
+
+    my_bun=new Array();
+    my_pic=new Array();
+    my_bun[0]="大吉！休学上等、未来は絶好調！";
+    my_pic[0]="daikiti.gif";
+    my_bun[1]="中吉！一度休学も良さげ？";
+    my_pic[1]="tyuukiti.gif";
+    my_bun[2]="吉。休学が良さそうです";
+    my_pic[2]="kiti.gif";
+    my_bun[3]="小吉。休学もいいんじゃない？";
+    my_pic[3]="syoukiti.gif";
+    my_bun[4]="凶…休学したらどうでもよくなります。";
+    my_pic[4]="kyou.gif";
+    my_bun[5]="大凶…こんな結果がどうでもよくなるくらい、休学して頑張ろう！";
+    my_pic[5]="daikyou.gif";
+    my_bun[6]="中吉。let's kyuugaku。";
+    my_pic[6]="tyuukiti.gif";
+    my_bun[7]="小吉。休学しかない。";
+    my_pic[7]="syoukiti.gif";
+    my_bun[8]="凶…休学して友達と勉強しよう。";
+    my_pic[8]="kyou.gif";
+    my_bun[9]="吉。休学して自分磨きすれば尚更良し。";
+    my_pic[9]="kiti.gif";
+
+    hajime="omikuji.gif";
+
+    pics=new Array();
+    for(i=0; i<my_pic.length; i++)
+	{
+	pics[i]=new Image();
+	pics[i].src=my_pic[i];
+	}
+
+    function img_load()
+	{
+	for(i=0; i<my_pic.length; i++)document.images["hidden"].src=pics[i].src;
+	document.images["hidden"].src=hajime;
+	}
+
+    function omikuji()
+	{a=Math.floor(Math.random()*10);
+	 document.images["kuji_pic"].src=pics[a].src;
+	 document.form1.text1.value=my_bun[a];
+	}
+
+     function my_reset()
+	{document.form1.text1.value="";
+	document.images["kuji_pic"].src=hajime;}
+
+//-->
+</script>
+</head>
+<body onLoad="img_load();">
+
+<div align="center">
+<img src="omikuji.gif" width="100" height="50" alt="おみくじ" name="kuji_pic">
+<form name="form1">
+  <textarea name="text1" rows="5" cols="35" wrap="soft"></textarea><br>
+  <input type="button" value="御神籤" onClick="omikuji();">
+  <input type="button" value="RESET" onClick="my_reset();";>
+<img src="" name="hidden" width="1" height="1" border="0">
+</form>
+</div>
+　・
+　・
+　・
+</body></html>
